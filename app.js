@@ -8,7 +8,7 @@ var bodyParser = require("body-parser");
 var LocalStrategy = require("passport-local");
 var flash = require("connect-flash");
 var passportLocalMongoose = require("passport-local-mongoose");
-var dbConn = "mongodb://akki:qwerty123@ds157383.mlab.com:57383/lt";
+var dbConn = "mongodb://akki:qwerty123@ds037688.mlab.com:37688/lts";
 mongoose.connect(dbConn);
 var port = process.env.PORT || 3000;
 
