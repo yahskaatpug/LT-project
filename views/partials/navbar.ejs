@@ -1,0 +1,66 @@
+<script type="text/javascript">
+
+    function printDiv(divName) {
+
+        var printContents = document.getElementById(divName).innerHTML;
+        w = window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+
+    }
+</script>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+
+            <a class="navbar-brand" href="#" style="color:#FF1493"><img style="padding-top: 0%;width:150px;" src="/img/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                    <%  if(!currentUser) {%>
+                <li class="active"><a href="/"><i class="fa fa-forumbee" aria-hidden="true"></i>
+                        <strong>Home</strong></a></li>
+                        <%}%>
+                <%  if(currentUser) {%>
+                <li class="active"><a href="/profile"><i class="fa fa-forumbee" aria-hidden="true"></i>
+                        <strong>Book</strong></a></li>
+                <%}%>
+
+                <% if(currentUser && (currentUser.username)=== "shubham") { console.log((currentUser.username)=== "shubham")  %>
+                <li class="active"><a href="/profile/new"><i class="fa fa-forumbee" aria-hidden="true"></i>
+                        <strong>Add-Timings</strong></a></li>
+                <%}%>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <%  if(!currentUser) {%>
+                <li class="active"><a href="/register"><i class="fa fa-user-plus"></i> <strong>SignUp</strong></a></li>
+                <li class="active"><a href="/login"><i class="fa fa-user"></i> <strong>LogIn</strong></a></li>
+                <%}%>
+                <%  if(currentUser) {%>
+                <li class="active"><a href="/logout"><i class="fa fa-user"></i><strong>LogOut</strong></a></li>
+
+                <%}%>
+
+                <%  if(currentUser) {%>
+                <li style="padding: 15px 0 0 20px; color:black">
+                    <i class="fa fa-address-book" aria-hidden="true"><strong>
+                            <%= currentUser.username %></strong></i> </li>
+                <%}%>
+                <%  if(currentUser) {%>
+                <li style="padding-right: 0%;padding-top: 0%">
+                    <form>
+
+                        <input type="button" style="position:absolute;top:50px;right:0;" class="btn btn-success"
+                            onclick="printDiv('data')" value="print" />
+                    </form>
+                </li>
+                <%}%>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

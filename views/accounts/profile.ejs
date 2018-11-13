@@ -1,0 +1,79 @@
+<% layout('layout') -%>
+
+
+<header class="jumbotron" style="background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.4)),url(/img/event.jpg);display: flex;background-size: cover;height: 270px;">
+
+  <div class="container" style="align-self:center;">
+    <div class="row" text-center style="display:flex; flex-wrap:wrap;">
+
+      <p>
+        <form action='/profile' method='GET' class='form-inline' style="width: 100%;">
+          <div class='form-group' style="width: 100%;">
+
+            <input type="date" name="search" />
+
+            <!-- <input class="form-control" type='text' name="search" placeholder="day" style="margin: 0;width: 40%;color: white;"> -->
+            <button class="btn btn-primary btn-large" style="width:19%;">Search</button>
+          </div>
+        </form>
+      </p>
+
+
+    </div>
+
+  </div>
+</header>
+
+</div>
+<%if(message.length>0){%>
+<div class="alert alert-success" role="alert" style="width:30%;margin:0  auto;">
+  <%= message %>
+</div>
+
+<%}else{%>
+<div class="container" id="data" style="background-color:#6e6969">
+  <div class="row">
+    <div class="col-md-12">
+      <ul style="list-style-type: none">
+        <% x.forEach(function(x){ %>
+        <li class="list_slot_book">
+
+          <div class="col-md-3 col-sm-3 x">
+            <strong>
+              <%= x.day %></strong>
+          </div>
+          <div class="col-md-3 col-sm-3 y">
+
+            <strong>Lt -
+              <%= x.lt %></strong>
+          </div>
+          <div class="col-md-3 col-sm-3 z">
+            <strong>
+              <%= x.strttime+" --- "+x.endtime %></strong>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <% if( x.intersect > 0){%>
+            <button class="btn btn-primary btn-small submit_list t_button" disabled>Book</button>
+            <%}else if( x.book_id.equals(currentUser._id) && x.bk===true ){%>
+            <button class="btn btn-danger btn-small submit_list t_button">Cancel</button>
+            <%}else if( x.book_id != currentUser._id && x.bk===true ){%>
+            <button class="btn btn-warning btn-small submit_list disabled" ondblclick="myFunction()"> Booked</button><span
+              id="errorname"></span>
+            <%}else{%>
+            <button class="btn btn-primary btn-small submit_list t_button">Book</button>
+            <%}%>
+          </div>
+          <span style="display:none" class="w">
+            <%= x.bk %></span>
+          <span style="display:none" class="intersect">
+            <%= x.intersect %></span>
+        </li>
+        <span style="margin:10px"></span>
+        <%})%>
+      </ul>
+    </div>
+  </div>
+</div>
+<%}%>
+
+<% include ../partials/subjs.ejs %>

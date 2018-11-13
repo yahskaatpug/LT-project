@@ -1,0 +1,53 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Todolist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/todo.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <div style="width:30%;margin:20px  auto;">
+    <form action="/profile" method="POST">
+      <p>
+        <select name="day">
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thrusday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+        </select>
+      </p>
+
+      <p>
+        <input class="thumbnail" type="time" name="strttime" placeholder="start-time" min=0 required>
+      </p>
+      <p>
+        <p>
+          <input class="thumbnail" type="time" name="endtime" placeholder="end-time" min=0 required>
+        </p>
+        <p>
+          <input class="thumbnail" type="text" name="lt" placeholder="Lt" required>
+        </p>
+
+        <p>
+          <p class="full">
+            <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+  <% include ../partials/javascriptfile.ejs %>
+</body>
+
+</html>

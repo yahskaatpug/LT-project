@@ -1,0 +1,33 @@
+
+<% layout('layout') -%>
+
+<div class="container" style="background-image:url('/img/forest.jpg');height: 100vh;background-position: center;width: 100%;">
+  <div class="row">
+    <div class="container" style="width:30%;margin:0  auto;">
+      <%  if(message.length>0) {%>
+      <div class="alert alert-danger" role="alert">
+        <h5>
+          <%= message %>
+        </h5>
+        <%}%>
+      </div>
+    </div>
+
+    <h1 style="margin-top:20%;">Welcome</h1>
+    <div style="width:30%;margin:0  auto;">
+      <form action="/login" method="POST" class="form">
+        <p>
+          <input  type="text" name="username" placeholder="username">
+        </p>
+
+        <p>
+          <input  type="password" name="password" placeholder="password">
+        </p>
+        <p>
+          <p class="full">
+            <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</div>
