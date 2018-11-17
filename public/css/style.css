@@ -271,5 +271,9 @@ li.list_slot_book:hover{
 }
 .list_slot_book{
   /* transition: .5s ease-in-out; */
-  padding: 40px 0;
+  display: flex;
+    padding: 15px 0;
+}
+.list_slot_book>div{
+align-self: center;
 }

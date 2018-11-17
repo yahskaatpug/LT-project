@@ -68,7 +68,7 @@ function IntersectValue(dataArr, obj) {
         (err, doc) => {
           if (err) console.log(err);
           else {
-            console.log(doc);
+            //console.log(doc);
           }
         }
       );
@@ -84,7 +84,7 @@ function IntersectValue(dataArr, obj) {
         (err, doc) => {
           if (err) console.log(err);
           else {
-            console.log(doc);
+            //console.log(doc);
           }
         }
       );

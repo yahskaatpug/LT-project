@@ -8,7 +8,7 @@ var bodyParser = require("body-parser");
 var LocalStrategy = require("passport-local");
 var flash = require("connect-flash");
 var passportLocalMongoose = require("passport-local-mongoose");
-var dbConn = "mongodb://akki:qwerty123@ds037688.mlab.com:37688/lts";
+var dbConn = "mongodb://admin:qwerty345@cluster0-shard-00-00-zsz5o.mongodb.net:27017,cluster0-shard-00-01-zsz5o.mongodb.net:27017,cluster0-shard-00-02-zsz5o.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";mongodb://localhost:27017/auth_lt //mongodb://akshay:qwerty123@ds163103.mlab.com:63103/lt 
 mongoose.connect(dbConn);
 var port = process.env.PORT || 3000;
 

@@ -1,17 +1,17 @@
 <% layout('layout') -%>
 
-<div class="container">
+<div class="container"style="background-image:url('/img/lt.jpg');height: 100vh;background-position: center;width: 100%;">
     <div class="row">
-        <h1 style="padding-left:35%">SignUp</h1>
-        <hr>
-        <div style="width:30%;margin:0  auto;">
+            <h1 style="margin-top:15%;color:black"><strong>SignUp</strong></h1>
+        
+        <div style="width:30%;margin:0  auto;background-color: black;">
             <form action="/register" method="POST">
                 <p>
                     <input class="thumbnail" type="text" name="username" placeholder="username">
                 </p>
 
-                <p>Password: <input class="thumbnail" id="textbox1" type="password" name="password"></p>
-                <p>Confirm Password: <input class="thumbnail" id="textbox1" type="password" name="pwd2"></p>
+                <p> <input class="thumbnail" id="textbox1" type="password" name="password" placeholder="password"></p>
+                <p> <input class="thumbnail" id="textbox1" type="password" name="pwd2" placeholder="confirm-password"></p>
 
                 <p class="full">
                     <button type="submit" id="Validate" onclick="checkForm()" class="btn btn-info">Submit</button>

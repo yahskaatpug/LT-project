@@ -57,10 +57,11 @@
             <%}else if( x.book_id.equals(currentUser._id) && x.bk===true ){%>
             <button class="btn btn-danger btn-small submit_list t_button">Cancel</button>
             <%}else if( x.book_id != currentUser._id && x.bk===true ){%>
-            <button class="btn btn-warning btn-small submit_list disabled" ondblclick="myFunction()"> Booked</button><span
+            <button class="btn btn-warning btn-small submit_list disabled" onclick="myFunction()"> Booked</button><span
               id="errorname"></span>
             <%}else{%>
             <button class="btn btn-primary btn-small submit_list t_button">Book</button>
+            
             <%}%>
           </div>
           <span style="display:none" class="w">

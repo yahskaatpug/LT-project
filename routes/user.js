@@ -8,9 +8,9 @@ let get_slots = require("../public/js/list_slot");
 var cron = require("node-schedule");
 var path = require("path");
 var Intersect = require("../public/js/intersect");
-var Recaptcha = require("express-recaptcha").Recaptcha;
+//var Recaptcha = require("express-recaptcha").Recaptcha;
 
-var recaptcha = new Recaptcha("site key", "secret key");
+//var recaptcha = new Recaptcha("site key", "secret key");
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -42,7 +42,7 @@ router.get("/register", function(req, res) {
   res.render("accounts/register", { currentUser: req.user });
 });
 //login routes
-router.get("/login", recaptcha.middleware.render, function(req, res) {
+router.get("/login", function(req, res) {
   //render login form
   res.render("accounts/login", {
     currentUser: req.user,
@@ -51,12 +51,7 @@ router.get("/login", recaptcha.middleware.render, function(req, res) {
   });
 });
 
-router.get("/login/fr", recaptcha.middleware.renderWith({ hl: "fr" }), function(
-  req,
-  res
-) {
-  res.render("accounts/login", { captcha: res.recaptcha });
-});
+
 
 router.get("/profile", isLoggedIn, function(req, res) {
   var message = "";
@@ -86,7 +81,7 @@ router.get("/profile", isLoggedIn, function(req, res) {
         Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())) /
         (1000 * 60 * 60 * 24)
     );
-    console.log(d);
+  
 
     var regex = new RegExp(escapeRegex(r), "gi");
     if (d >= 0 && d <= 6) {
@@ -124,7 +119,7 @@ router.get("/profile", isLoggedIn, function(req, res) {
           currentUser: req.user,
           message: message
         });
-        console.log(req.user);
+        
       }
     });
   }
@@ -179,14 +174,7 @@ router.post(
     failureRedirect: "/login",
     failureFlash: true
   }),
-  recaptcha.middleware.verify,
-  function(req, res) {
-    if (!req.recaptcha.error) {
-      // success code
-    } else {
-      // error code
-    }
-  }
+ 
 );
 
 router.get("/logout", function(req, res) {
@@ -221,11 +209,11 @@ router.post("/profile", function(req, res) {
   //     res.redirect("/profile");
   // })
 });
-router.post("/update_bk", (req, res) => {
-  console.log(req.body);
+router.post("/update_bk",async (req, res) => {
+  console.log("wwwww");
   let x = String(req.body.bk) === "true";
   let y = !x;
-  console.log(y);
+  //console.log(y);
   let s_obj = {
     day: req.body.day,
     strttime: req.body.strttime.replace(" ", ""),
@@ -234,15 +222,14 @@ router.post("/update_bk", (req, res) => {
     bk: x
   };
 
-  var o = Book.findOne({ day: req.body.day });
-  Book.update(s_obj, { $set: { bk: y, book_id: req.user._id } }, (err, doc) => {
+  await Book.update(s_obj, { $set: { bk: y, book_id: req.user._id } }, (err, doc) => {
     if (err) console.log(err);
     else {
       //console.log(doc);
     }
   });
   s_obj.bk = y;
-  Intersect(s_obj);
+  await Intersect(s_obj);
 
   // Book.find({ "strttime": req.body.strttime.replace(" ", ""), "endtime": req.body.endtime.replace(" ", "") }, (err, doc) => {
   //   if (err) console.log(err);

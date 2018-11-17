@@ -30,7 +30,7 @@ async function print_time(x) {
     let arr_2 = [];
     for (l = 0; l < x[k].length; l++) {
       let arr_3 = [];
-      console.log(dur + "------->");
+      //console.log(dur + "------->");
       for (m = 0; m < x[k][l].length; m++) {
         y = IsFloat(x[k][l][m]);
         a = parseInt(x[k][l][m]);
@@ -55,12 +55,12 @@ async function print_time(x) {
             booking = new Book(newBook);
             await booking.save((err, Book) => {
               if (err) console.log(err);
-              else console.log("done");
+             // else //console.log("done");
               // res.redirect("/profile/new");
             });
-            console.log(
-              a + ":" + b * 60 + " <------> " + (a + c) + ":" + (b + d) * 60
-            );
+            // console.log(
+            //   a + ":" + b * 60 + " <------> " + (a + c) + ":" + (b + d) * 60
+            // );
           } else if (b + d === 1) {
             endtime = a + c + 1 + ":00";
             newBook = {
@@ -75,10 +75,10 @@ async function print_time(x) {
             booking = new Book(newBook);
             await booking.save((err, Book) => {
               if (err) console.log(err);
-              else console.log("done");
+              //else //console.log("done");
               // res.redirect("/profile/new");
             });
-            console.log(a + ":" + b * 60 + " <------> " + (a + c + 1) + ":00");
+            //console.log(a + ":" + b * 60 + " <------> " + (a + c + 1) + ":00");
           }
           // newBook = { day: Day, strttime: strttime, endtime: endtime, lt: lh, ask: id };
 
@@ -101,17 +101,10 @@ async function print_time(x) {
             booking = new Book(newBook);
             await booking.save((err, Book) => {
               if (err) console.log(err);
-              else console.log("done");
+              //else //console.log("done");
               // res.redirect("/profile/new");
             });
-            console.log(
-              x[k][l][m] +
-                ":00" +
-                " <------> " +
-                (x[k][l][m] + c) +
-                ":" +
-                (b + d) * 60
-            );
+            
           } else if (b + d === 0) {
             endtime = x[k][l][m] + c + ":00";
             newBook = {
@@ -126,12 +119,12 @@ async function print_time(x) {
             booking = new Book(newBook);
             await booking.save((err, Book) => {
               if (err) console.log(err);
-              else console.log("done");
+              //else console.log("done");
               // res.redirect("/profile/new");
             });
-            console.log(
-              x[k][l][m] + ":00" + " <------> " + (x[k][l][m] + c) + ":00"
-            );
+            // console.log(
+            //   x[k][l][m] + ":00" + " <------> " + (x[k][l][m] + c) + ":00"
+            // );
           }
           // newBook = { day: Day, strttime: strttime, endtime: endtime, lt: lh, ask: id };
           arr_3.push(x[k][l][m] + ":00");

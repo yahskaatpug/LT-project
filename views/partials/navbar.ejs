@@ -16,7 +16,7 @@
         <div class="navbar-header">
 
 
-            <a class="navbar-brand" href="#" style="color:#FF1493"><img style="padding-top: 0%;width:150px;" src="/img/logo.png"></a>
+            <a class="navbar-brand" href="#" style="color:#FF1493"><img style="padding-top: 0%;width:150px;background-color: rgba(0,0,0,.7);" src="/img/logo.png"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +31,7 @@
                         <strong>Book</strong></a></li>
                 <%}%>
 
-                <% if(currentUser && (currentUser.username)=== "shubham") { console.log((currentUser.username)=== "shubham")  %>
+                <% if(currentUser && (currentUser.username)=== "admin") { console.log((currentUser.username)=== "shubham")  %>
                 <li class="active"><a href="/profile/new"><i class="fa fa-forumbee" aria-hidden="true"></i>
                         <strong>Add-Timings</strong></a></li>
                 <%}%>
