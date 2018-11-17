@@ -16,8 +16,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 var rule2 = new cron.RecurrenceRule();
-rule2.dayOfWeek = [5, 6, 0];
-rule2.hour = 16;
+rule2.dayOfWeek = 6;
+rule2.hour = 23;
 rule2.minute = 40;
 
 cron.scheduleJob(rule2, function() {
@@ -84,7 +84,7 @@ router.get("/profile", isLoggedIn, function(req, res) {
   
 
     var regex = new RegExp(escapeRegex(r), "gi");
-    if (d >= 0 && d <= 12) {
+    if (d >= 0 && d <= 6) {
       Book.find({ day: regex }, function(err, x) {
         if (err) {
           console.log(err);
