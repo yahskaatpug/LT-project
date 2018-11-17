@@ -72,7 +72,7 @@ $(document).ready(function() {
       },
       time:setTimeout(() => {
         window.location.reload(true);
-      }, 2000)
+      }, 1000)
       //refresh:window.location.reload(true)
     });
     // console.log("hi");
