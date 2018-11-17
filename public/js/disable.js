@@ -60,7 +60,7 @@ $(document).ready(function() {
       type: "POST",
       data: JSON.stringify(obj),
       contentType: "application/json",
-      url: "http://localhost:5000/update_bk",
+      url: "https://intense-anchorage-78621.herokuapp.com/update_bk",
       success: function(json,status) {
         console.log("success");
         //console.log(status + "---------------------------");
@@ -72,7 +72,7 @@ $(document).ready(function() {
       },
       time:setTimeout(() => {
         window.location.reload(true);
-      }, 3000)
+      }, 2000)
       //refresh:window.location.reload(true)
     });
     // console.log("hi");
