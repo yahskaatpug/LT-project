@@ -84,7 +84,7 @@ router.get("/profile", isLoggedIn, function(req, res) {
   
 
     var regex = new RegExp(escapeRegex(r), "gi");
-    if (d >= 0 && d <= 6) {
+    if (d >= 0 && d <= 12) {
       Book.find({ day: regex }, function(err, x) {
         if (err) {
           console.log(err);
