@@ -36,6 +36,7 @@
                         <strong>Add-Timings</strong></a></li>
                 <%}%>
             </ul>
+        </div>
             <ul class="nav navbar-nav navbar-right">
                 <%  if(!currentUser) {%>
                 <!-- <li class="active"><a href="/register"><i class="fa fa-user-plus"></i> <strong>SignUp</strong></a></li> -->
@@ -52,7 +53,7 @@
                             <%= currentUser.username %></strong></i> </li>
                 <%}%>
             </ul>
-        </div>
+       
                 <%  if(currentUser) {%>
                 <li style="padding-right: 0%;padding-top: 0%">
                     <form>
