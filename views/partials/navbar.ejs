@@ -23,15 +23,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                     <%  if(!currentUser) {%>
-                <li class="active"><a href="/"><i class="fa fa-forumbee" aria-hidden="true"></i>
-                        <strong>Home</strong></a></li>
+                <li class="active"><a href="/">
+                        <strong>Home</strong><i class="fa fa-home" aria-hidden="true"></i></a></li>
                         <%}%>
                 <%  if(currentUser) {%>
                 <li class="active"><a href="/profile"><i class="fa fa-forumbee" aria-hidden="true"></i>
                         <strong>Book</strong></a></li>
                 <%}%>
 
-                <% if(currentUser && (currentUser.username)=== "admin") { console.log((currentUser.username)=== "shubham")  %>
+                <% if(currentUser && (currentUser.username)=== "admin@mail.com") { console.log((currentUser.username)=== "shubham")  %>
                 <li class="active"><a href="/profile/new"><i class="fa fa-forumbee" aria-hidden="true"></i>
                         <strong>Add-Timings</strong></a></li>
                 <%}%>
