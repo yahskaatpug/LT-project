@@ -27,12 +27,12 @@
                         <strong>Home </strong><i class="fa fa-home" aria-hidden="true"></i></a></li>
                         <%}%>
                 <%  if(currentUser) {%>
-                <li class="active"><a href="/profile"><i class="fa fa-forumbee" aria-hidden="true"></i>
+                <li class="active"><a href="/profile"><i class="fa fa-plane"></i>
                         <strong>Book</strong></a></li>
                 <%}%>
 
                 <% if(currentUser && (currentUser.username)=== "admin@mail.com") { console.log((currentUser.username)=== "shubham")  %>
-                <li class="active"><a href="/profile/new"><i class="fa fa-forumbee" aria-hidden="true"></i>
+                <li class="active"><a href="/profile/new"><i class="fa fa-arrow-circle-o-up"></i>
                         <strong>Add-Timings</strong></a></li>
                 <%}%>
             </ul>
@@ -42,7 +42,7 @@
                 <li class="active"><a href="/login"><i class="fa fa-user"></i> <strong>LogIn</strong></a></li>
                 <%}%>
                 <%  if(currentUser) {%>
-                <li class="active"><a href="/logout"><i class="fa fa-user"></i><strong>LogOut</strong></a></li>
+                <li class="active"><a href="/logout"><i class="glyphicon glyphicon-log-out"></i><strong>LogOut</strong></a></li>
 
                 <%}%>
 
