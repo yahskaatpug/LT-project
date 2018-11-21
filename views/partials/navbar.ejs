@@ -1,15 +1,4 @@
-<script type="text/javascript">
 
-    function printDiv(divName) {
-
-        var printContents = document.getElementById(divName).innerHTML;
-        w = window.open();
-        w.document.write(printContents);
-        w.print();
-        w.close();
-
-    }
-</script>
 <nav class="navbar navbar-default">
    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,6 +26,7 @@
                 <%}%>
             </ul>
         </div>
+        <div>
             <ul class="nav navbar-nav navbar-right">
                 <%  if(!currentUser) {%>
                 <!-- <li class="active"><a href="/register"><i class="fa fa-user-plus"></i> <strong>SignUp</strong></a></li> -->
@@ -53,7 +43,7 @@
                             <%= currentUser.username %></strong></i> </li>
                 <%}%>
             </ul>
-       
+            </div>
                 <%  if(currentUser) {%>
                 <li style="padding-right: 0%;padding-top: 0%">
                     <form>
@@ -67,3 +57,16 @@
             </div>
    
 </nav>
+
+<script type="text/javascript">
+
+    function printDiv(divName) {
+
+        var printContents = document.getElementById(divName).innerHTML;
+        w = window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+
+    }
+</script>

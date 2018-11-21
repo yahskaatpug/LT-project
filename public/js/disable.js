@@ -60,7 +60,7 @@ $(document).ready(function() {
       type: "POST",
       data: JSON.stringify(obj),
       contentType: "application/json",
-      url: "https://intense-anchorage-78621.herokuapp.com/update_bk",
+      url: "https://lnmiit-lt-booking-portal.herokuapp.com/update_bk",
       success: function(json,status) {
         console.log("success");
         //console.log(status + "---------------------------");
