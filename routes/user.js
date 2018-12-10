@@ -16,9 +16,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 var rule2 = new cron.RecurrenceRule();
-rule2.dayOfWeek = 6;
-rule2.hour = 23;
-rule2.minute = 40;
+rule2.dayOfWeek = 1;
+rule2.hour = 20;
+rule2.minute = 12;
 
 cron.scheduleJob(rule2, function() {
   console.log("This runs at 3:10AM every Friday, Saturday and Sunday.");
